@@ -1,0 +1,17 @@
+name: network_admin_system
+
+services:
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    container_name: admin_e20221273
+    ports:
+      - "1373:80"
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: client_e20221273
+    ports:
+      - "1374:80"

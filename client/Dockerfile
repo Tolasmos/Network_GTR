@@ -1,14 +1,9 @@
-# Build the client frontend and serve it with Nginx.
-FROM node:18-alpine AS build
-WORKDIR /app
+FROM nginx:stable-alpine
 
-COPY package*.json ./
-RUN npm install
+RUN rm -rf /usr/share/nginx/html/*
 
-COPY . .
-RUN npm run build
+COPY ./build/web /usr/share/nginx/html
 
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]

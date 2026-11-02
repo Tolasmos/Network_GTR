@@ -1,4 +1,4 @@
-name: network_admin_system
+name: Network_GTR
 
 services:
   admin:

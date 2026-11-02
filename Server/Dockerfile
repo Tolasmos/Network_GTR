@@ -1,10 +1,9 @@
-# Run the backend API service.
-FROM node:18-alpine
-WORKDIR /app
+FROM nginx:stable-alpine
 
-COPY package*.json ./
-RUN npm install --omit=dev
+RUN rm -rf /usr/share/nginx/html/*
 
-COPY . .
-EXPOSE 5000
-CMD ["npm", "start"]
+COPY ./build/web /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

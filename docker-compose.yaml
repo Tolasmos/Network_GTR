@@ -8,11 +8,11 @@ services:
       dockerfile: Dockerfile
     container_name: admin_e20221273
     ports:
-      - "8026:80"
+      - "8028:80"
   client:
     build:
       context: ./client
       dockerfile: Dockerfile
     container_name: client_e20221273
     ports:
-      - "8027:80"
+      - "8029:80"

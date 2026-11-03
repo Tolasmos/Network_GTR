@@ -1,6 +1,7 @@
 name: Network_GTR_Tola
 
 services:
+
   admin:
     build:
       context: ./admin

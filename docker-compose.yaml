@@ -5,14 +5,14 @@ services:
   admin:
     build:
       context: ./admin
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     container_name: admin_e20221273
     ports:
       - "8026:80"
   client:
     build:
       context: ./client
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     container_name: client_e20221273
     ports:
       - "8027:80"
